@@ -1,16 +1,16 @@
 require 'active_support/all'
 require 'rest_client'
-require './brownie/credentials'
-require './brownie/shipper'
-require './brownie/ship_to'
-require './brownie/ship_from' 
+require 'brownie/credentials'
+require 'brownie/shipper'
+require 'brownie/ship_to'
+require 'brownie/ship_from' 
 module Brownie
   
 
 
    class Shipment
    		attr_accessor :request,:errors,:account_number,:tracking_number,:shipment_digest,:credentials,:shipper,:ship_to,
-         :ship_from,:response,:service_code,:package_type,:declared_value,:package_weight,:label_binary
+         :ship_from,:response,:service_code,:package_type,:declared_value,:package_weight,:label_binary,:api_domain,:environment
 
    		attr_writer :shipment_data,:shipment_xml
 
@@ -21,6 +21,7 @@ module Brownie
             self.shipper = Shipper.new
             self.ship_to = ShipTo.new
             self.ship_from = ShipFrom.new
+
    		end
 
 
@@ -75,7 +76,7 @@ module Brownie
 
 				shipment_xml_str = test["ShipmentConfirmRequest"].to_xml(:root => "ShipmentConfirmRequest")
 	 
-   			self.response = RestClient.post("https://wwwcie.ups.com/ups.app/xml/ShipConfirm","#{access_request_header}#{shipment_xml_str}")
+   			self.response = RestClient.post("https://#{domain}/ups.app/xml/ShipConfirm","#{access_request_header}#{shipment_xml_str}")
    			if self.response.code.eql?(200)
    				response_hash = Hash.from_xml(response)
                if response_hash["ShipmentConfirmResponse"]["Response"]["ResponseStatusCode"].eql?("0")
@@ -92,7 +93,7 @@ module Brownie
    			end
    		end
 
-         def accept_label(_shipment_digest=nil,path="shipping_label.gif")
+         def label(_shipment_digest,path)
             shipment_digest = _shipment_digest.nil? ? @shipment_digest : _shipment_digest
              label_xml = '<?xml version="1.0" encoding="ISO-8859-1"?>
                 <ShipmentAcceptRequest>
@@ -106,7 +107,10 @@ module Brownie
                 <ShipmentDigest>' + shipment_digest +  '</ShipmentDigest>
                 </ShipmentAcceptRequest>'
 
-            label_response = RestClient.post("https://wwwcie.ups.com/ups.app/xml/ShipAccept","#{header}#{label_xml}")
+
+            
+
+            label_response = RestClient.post("https://#{domain}/ups.app/xml/ShipAccept","#{access_request_header}#{label_xml}")
             label_hash = Hash.from_xml(label_response)
             self.label_binary = label_hash["ShipmentAcceptResponse"]["ShipmentResults"]["PackageResults"]["LabelImage"]["GraphicImage"]
             File.open(path, 'wb') do|f|
@@ -117,8 +121,18 @@ module Brownie
           
 
    		private
+         def domain
+            if self.environment.nil?
+               "wwwcie.ups.com"
+            elsif self.environment == "production"
+                  "onlinetools.ups.com"
+               else
+                 "wwwcie.ups.com" 
+            end
+         end
+
    		def template_hash
-   			digest_xml_file = File.open("./xml/ship_confirm.xml", "rb")
+   			digest_xml_file = File.open("xml/ship_confirm.xml", "rb")
    			@shipment_xml = digest_xml_file.read
    			Hash.from_xml(@shipment_xml)
    		end
