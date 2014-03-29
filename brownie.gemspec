@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.markdown",
     "Rakefile",
     "VERSION",
+    "brownie.gemspec",
     "lib/brownie.rb",
     "lib/brownie/credentials.rb",
     "lib/brownie/ship_from.rb",
