@@ -2,8 +2,7 @@
 
 Brownie helps you create shipments via UPS.com's developer api.  You can create shipments, and labels.
 
-Sample: 
-
+== Usage 
 
 b = Brownie::Shipment.new
 b.account_number = "YOUR UPS ACCOUNT NUMBER"
