@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = "Creates UPS shipments and labels"
   gem.description = "Creates UPS shipments and labels via UPS.com's developer api."
-  gem.email = "mike@michaeljaffe.com"
+  gem.email = "mike@mikewritescode.com"
   gem.authors = ["Michael Jaffe"]
   # dependencies defined in Gemfile
 end
