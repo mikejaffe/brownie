@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShipmentConfirmRequest xml:lang="en-US">
+   <Request>
+      <TransactionReference>
+         <CustomerContext></CustomerContext>
+         <XpciVersion />
+      </TransactionReference>
+      <RequestAction>ShipConfirm</RequestAction>
+      <RequestOption>validate</RequestOption>
+   </Request>
+   <LabelSpecification>
+      <LabelPrintMethod>
+         <Code>GIF</Code>
+         <Description>gif file</Description>
+      </LabelPrintMethod>
+      <HTTPUserAgent>Mozilla/4.5</HTTPUserAgent>
+      <LabelImageFormat>
+         <Code>GIF</Code>
+         <Description>gif</Description>
+      </LabelImageFormat>
+   </LabelSpecification>
+   <Shipment>
+      <RateInformation>
+         <NegotiatedRatesIndicator />
+      </RateInformation>
+      <Description />
+      <Shipper>
+         <Name></Name>
+         <PhoneNumber></PhoneNumber>
+         <ShipperNumber></ShipperNumber>
+         <TaxIdentificationNumber></TaxIdentificationNumber>
+         <Address>
+            <AddressLine1></AddressLine1>
+            <City></City>
+            <StateProvinceCode></StateProvinceCode>
+            <PostalCode></PostalCode>
+            <PostcodeExtendedLow />
+            <CountryCode></CountryCode>
+         </Address>
+      </Shipper>
+      <ShipTo>
+         <CompanyName></CompanyName>
+         <AttentionName></AttentionName>
+         <PhoneNumber></PhoneNumber>
+         <Address>
+            <AddressLine1></AddressLine1>
+            <City></City>
+            <StateProvinceCode></StateProvinceCode>
+            <PostalCode></PostalCode>
+            <CountryCode></CountryCode>
+         </Address>
+      </ShipTo>
+      <ShipFrom>
+         <CompanyName></CompanyName>
+         <AttentionName></AttentionName>
+         <PhoneNumber></PhoneNumber>
+         <TaxIdentificationNumber></TaxIdentificationNumber>
+         <Address>
+            <AddressLine1></AddressLine1>
+            <City></City>
+            <StateProvinceCode></StateProvinceCode>
+            <PostalCode></PostalCode>
+            <CountryCode></CountryCode>
+         </Address>
+      </ShipFrom>
+      <PaymentInformation>
+         <Prepaid>
+            <BillShipper>
+               <AccountNumber></AccountNumber>
+            </BillShipper>
+         </Prepaid>
+      </PaymentInformation>
+      <Service>
+         <Code></Code> 
+      </Service>
+      <Package>
+      <PackagingType>
+         <Code></Code>
+      </PackagingType> 
+      <PackageWeight>
+         <Weight></Weight>
+      </PackageWeight> 
+
+      <PackageServiceOptions>
+      <InsuredValue> <MonetaryValue></MonetaryValue>
+      </InsuredValue> 
+   </PackageServiceOptions>
+      </Package>
+   </Shipment>
+</ShipmentConfirmRequest>
