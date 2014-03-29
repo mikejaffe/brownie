@@ -64,9 +64,12 @@ Future releasess will have address valdation, and tracking
 
 ## TODO
 
-Add addresss validation
-Run rspec tests on shipping confirmation and shipping acceptance.
-Add more local validations and error checking
+* Spruce up Shipping class so population of xml fields is cleaner
+* Add addresss validation
+* Run rspec tests on shipping confirmation and shipping acceptance.
+* Add more local validations and error checking
+
+
 
 ## Contributing to brownie
  
