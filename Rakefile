@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "brownie"
   gem.homepage = "http://github.com/mikejaffe/brownie"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Creates UPS shipments and labels"
+  gem.description = "Creates UPS shipments and labels via UPS.com's developer api."
   gem.email = "mike@michaeljaffe.com"
   gem.authors = ["Michael Jaffe"]
   # dependencies defined in Gemfile
