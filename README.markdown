@@ -48,6 +48,8 @@ Future releasess will have address valdation, and tracking
 	b.package_type = Brownie::Package::BOX
 	b.declared_value = 100
 
+	b.environment = "production" # defaulted to development 
+
 	# Confirm and Validate Shipment
 	if b.confirm
 	   puts b.tracking_number
