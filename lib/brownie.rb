@@ -131,11 +131,12 @@ module Brownie
             end
          end
 
-   		def template_hash
-   			digest_xml_file = File.open("xml/ship_confirm.xml", "rb")
-   			@shipment_xml = digest_xml_file.read
-   			Hash.from_xml(@shipment_xml)
-   		end
+         def template_hash
+            xml_path = File.join(File.dirname(File.expand_path(__FILE__)), "../xml/ship_confirm.xml")
+            digest_xml_file = File.open(xml_path, "rb")
+            @shipment_xml = digest_xml_file.read
+            Hash.from_xml(@shipment_xml)
+         end
 
          def access_request_header
             '<?xml version="1.0"?>
