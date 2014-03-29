@@ -1,9 +1,9 @@
-= brownie
+# brownie
 
 Brownie helps you create shipments via UPS.com's developer api.  You can create shipments, and labels.
 
 
-== Usage 
+## Usage 
 
 	b = Brownie::Shipment.new
 	b.account_number = "YOUR UPS ACCOUNT NUMBER"
@@ -57,7 +57,7 @@ Brownie helps you create shipments via UPS.com's developer api.  You can create 
 
 
 
-== Contributing to brownie
+## Contributing to brownie
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -67,7 +67,7 @@ Brownie helps you create shipments via UPS.com's developer api.  You can create 
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2014 Michael Jaffe. See LICENSE.txt for
 further details.
