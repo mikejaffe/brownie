@@ -1,6 +1,6 @@
 # brownie
 
-Brownie helps you create shipments via UPS.com's developer api.  You can create shipments, and labels.
+Brownie helps you create shipments via UPS.com's developer api.  This gem is a work in progress. You can create shipments, and labels.
 
 Future releasess will have address valdation, and tracking 
 
@@ -62,7 +62,11 @@ Future releasess will have address valdation, and tracking
 	b.label(b.shipment_digest,"/path/to/save/label.gif")
 
 
+## TODO
 
+Add addresss validation
+Run rspec tests on shipping confirmation and shipping acceptance.
+Add more local validations and error checking
 
 ## Contributing to brownie
  
