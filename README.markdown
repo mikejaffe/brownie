@@ -5,7 +5,7 @@ Brownie helps you create shipments via UPS.com's developer api.  This gem is a w
 Future releasess will have address valdation, and tracking 
 
 ## Install
-	gem 'brownie', '~> 0.1.1'
+	gem 'brownie', '~> 0.2.1'
 
 
 ## Usage 
