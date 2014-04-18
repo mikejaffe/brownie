@@ -1,17 +1,22 @@
 module Brownie
 	class Common
          def self.domain
+
+            env = Object.const_defined?(:Rails) ? Rails.env : nil
             staging = "wwwcie.ups.com"
             production = "onlinetools.ups.com"
-            return staging if ENV["RAILS_ENV"]
 
-            if self.environment.nil?
-               staging
-            elsif self.environment == "production"
-                  production
-               else
-                staging
+            if !env.nil?
+               if !env.to_s.eql?("production")
+                 return staging
+               end
             end
+            if ENV["ENV"].nil?
+              return staging 
+            end
+            
+            return staging unless ENV["ENV"].eql?("production")
+            return production
          end
 
          def self.template_to_hash(template,root="ShipmentConfirmRequest")
