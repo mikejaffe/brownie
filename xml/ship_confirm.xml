@@ -77,10 +77,13 @@
       <PackagingType>
          <Code></Code>
       </PackagingType> 
+      <Dimensions>
+         <UnitOfMeasurement> <Code></Code> </UnitOfMeasurement>
+         <Length></Length> <Width></Width> <Height></Height>
+      </Dimensions> 
       <PackageWeight>
-         <Weight></Weight>
-      </PackageWeight> 
-
+      <Weight></Weight> 
+      </PackageWeight>
       <PackageServiceOptions>
       <InsuredValue> <MonetaryValue></MonetaryValue>
       </InsuredValue> 
