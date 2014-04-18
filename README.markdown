@@ -45,10 +45,12 @@ Future releasess will have address valdation, and tracking
 	b.ship_from.country_code = "US"
 
 	b.service_code = Brownie::ServiceCodes::GROUND
-	b.package_type = Brownie::Package::BOX
-	b.declared_value = 100
-
-	b.environment = "production" # defaulted to development 
+	b.package.package_type = Brownie::Package::CUSTOMER_SUPPLIED_PACKAGE
+	b.package.declared_value = 100
+	b.package.unit_of_measurement = Brownie::Dimensions::INCHES
+	b.package.length = 6
+	b.package.width = 6
+	b.package.height = 4
 
 	# Confirm and Validate Shipment
 	if b.confirm
