@@ -7,7 +7,7 @@ module Brownie
    class Shipment
    		attr_accessor :request,:errors,:account_number,:tracking_number,:shipment_digest,:credentials,:shipper,:ship_to,
          :ship_from,:response,:service_code,:label_binary,:api_domain,
-         :environment,:data,:shipment_xml,:template,:package
+         :environment,:data,:shipment_xml,:template,:package,:warnings
 
  
    		def initialize(shipment=nil)
@@ -43,6 +43,8 @@ module Brownie
                if response_hash["ShipmentConfirmResponse"]["Response"]["ResponseStatusCode"].eql?("0")
                   self.errors = response_hash["ShipmentConfirmResponse"]["Response"]["Error"]
                   return false
+               else
+                  self.warnings = response_hash["ShipmentConfirmResponse"]["Response"]["Error"]
                end
 
    				self.tracking_number = response_hash["ShipmentConfirmResponse"]["ShipmentIdentificationNumber"]

@@ -2,7 +2,7 @@ source "http://rubygems.org"
 # Add dependencies required to use your gem here.
 # Example:
 gem "activesupport", ">= 3.2.2"
-gem "rest_client", ">= 1.7"
+gem "rest-client", ">= 1.7"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

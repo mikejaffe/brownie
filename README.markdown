@@ -55,6 +55,7 @@ Future releasess will have address valdation, and tracking
 	# Confirm and Validate Shipment
 	if b.confirm
 	   puts b.tracking_number
+	   puts b.warnings
 	else 
 	   puts b.errors
 	end
